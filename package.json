@@ -1,0 +1,25 @@
+{
+  "name": "apply_jira_labels",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Chris Gamio",
+  "email": "cgamio@cap-rx.com",
+  "license": "UNLICENSED",
+  "main": "action.js",
+  "private": true,
+  "keywords": [ ],
+  "scripts": {
+    "build": "ncc build action.js --minify --out action.dist.js",
+    "build::debug": "ncc build action.js --minify --debug --out action.dist.js",
+    "build::develop": "ncc build action.js --minify --watch --out action.dist.js",
+    "build::develop::debug": "ncc build action.js --minify --watch --debug --out action.dist.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "jira-client": "^8.2.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0"
+  }
+}

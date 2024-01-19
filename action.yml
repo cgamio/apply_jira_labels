@@ -1,0 +1,28 @@
+name: 'Apply Jira Labels'
+description: 'Apply specified labels to PR if on linked Jira issue'
+runs:
+  using: 'node16'
+  main: './action.dist.js/index.js'
+inputs:
+  jira_ticket_id:
+    description: 'the jira ticket identifier (eg: cap-1234)'
+    required: true
+  jira_api_url:
+    default: 'false'
+    description: 'the base url for the jira instance (ex. someproject.atlassian.net)'
+    required: 'true'
+  jira_api_email:
+    default: 'false'
+    description: 'the email address associated with the jira api key'
+    required: 'true'
+  jira_api_key:
+    default: 'false'
+    description: 'an api key for an account with at least read access to relevant issues'
+    required: 'true'
+  specific_labels:
+    default: 'false'
+    description: 'a comma separated list of specific labels to copy over if you do not want all labels'
+    required: 'false'
+  repo-token:
+    description: 'github token'
+  
